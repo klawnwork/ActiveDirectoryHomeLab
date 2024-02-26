@@ -30,7 +30,7 @@ Upon launching VM there is annoying mouse lag and no auto-adjust when we change 
 <img src="https://imgur.com/IVak4Ld.png" height="80%" width="80%"/>
 <br />
 <br />
-Configuring network properties for internal NIC, no default gateway because the Domain Controller acts as a defualt gateway. DNS comes with AD, which we install later, so the preferred DNS can be the DC IP address, or in this case is the loopback address: <br/>
+Configuring network properties for internal NIC, no default gateway because the Domain Controller acts as a defualt gateway. DNS comes with AD, which we install later, so the preferred DNS can be the DC IP address, or in this case the loopback address: <br/>
 <br />
 <img src="https://imgur.com/uEBBJy6.png" height="80%" width="80%"/>
 <br />
@@ -45,7 +45,7 @@ Create a new Organizational Unit and add ourself as an admin. Once the user is c
 <img src="https://imgur.com/CFdIcJR.png" height="80%" width="80%"/> <img src="https://imgur.com/mIKC0bn.png" height="80%" width="80%"/> 
 <br />
 <br />
-Installing RAS (Remote Acess Server), allowing our client to access the internet through the Domain Controller while remaining on the private network: <br/>
+Installing RAS (Remote Acess Server) allows our client to access the internet through the Domain Controller while remaining on the private network: <br/>
 <br />
 <img src="https://imgur.com/YpiDz5Z.png" height="80%" width="80%"/> 
 <br />
@@ -55,7 +55,7 @@ Configure NAT: <br/>
 <img src="https://imgur.com/nzuXhrk.png" height="80%" width="80%"/> 
 <br />
 <br />
-Install and configure DHCP scope, lease duration, and exclusions. This allows the client on our internal network to receive an IP address: <br/>
+Install DHCP and configure scope, lease duration, and exclusions. This allows the client on our internal network to receive an IP address: <br/>
 <br />
 <img src="https://imgur.com/a52PVF9.png" height="80%" width="80%"/> 
 <br />
@@ -75,7 +75,7 @@ Now it's time to launch our Windows 10 client, but we must change the NIC from N
 <img src="https://i.imgur.com/NSvjz8k.png" height="80%" width="80%"/> 
 <br />
 <br />
-Once we launch the client VM, we run ipconfig to make sure our network is properly configured. We can see that the default gateway is 172.16.0.1, which is the IP address of the Domain Controller, which means we are connected and have access to the internet. To confirm this we ping an outside address of 9.9.9.9, and we see that we are connected: <br/>
+Once we launch the client VM, we use ipconfig to make sure our network is properly configured. We can see that the default gateway is 172.16.0.1, which is the IP address of the Domain Controller, which means we are connected and have access to the internet. To confirm this we ping an outside address of 9.9.9.9, and we see that we are connected: <br/>
 <br />
 <img src="https://i.imgur.com/qZJ9Wq6.png" height="80%" width="80%"/> 
 <br />
